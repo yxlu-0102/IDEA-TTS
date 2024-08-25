@@ -43,10 +43,10 @@
               <span class="author-block">National Engineering Research Center of Speech and Language Information Processing <br> University of Science and Technology of China<br></span>
             </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
+            <!-- <div class="column has-text-centered">
+              <div class="publication-links"> -->
                 <!--                   Code Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://github.com/yxlu-0102/IDEA-TTS" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -54,9 +54,9 @@
                   </span>
                   <span>Code</span>
                   </a>
-                </span>
+                </span> -->
                 <!--                   ArXiv Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -66,7 +66,7 @@
                   </a>
                 </span>
               </div>
-            </div>
+            </div> -->
 
         </div>
       </div>
@@ -82,13 +82,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper proposes IDEA-TTS, an Incremental Disentanglement-based Environment-Aware zero-shot text-to-speech (TTS) method that can synthesize speech for new speakers while possessing the acoustic characterization from a reference environmental speech.
-            Built upon the VITS framework, IDEA-TTS employs an environment-robust speaker encoder to extract robust speaker embeddings from an environmental speech for zero-shot TTS.
-            To effectively disentangle the environment, speaker, and text information, we propose an incremental disentanglement process, where a spectrogram enhancer is designed to first disentangle the environmental spectrogram into an enhanced spectrogram and an environment mask. 
-            The environment mask is processed by an environment encoder to extract environmental embeddings, while the enhanced spectrogram facilitates the further disentanglement of the speaker and text information.
-            Finally, both the speaker embedding and environment embedding are conditioned into the decoder for environmental speech generation.
-            Experimental results demonstrate that our proposed IDEA-TTS achieves promising environment-aware TTS performance in terms of speech quality, speaker similarity, and environmental similarity.
-            Additionally, it also achieves state-of-the-art performance in the acoustic environment conversion task.
+            This paper proposes IDEA-TTS, an Incremental Disentanglement-based Environment-Aware zero-shot text-to-speech (TTS) method that can synthesize speech for unseen speakers while preserving the acoustic characteristics of a given environment reference speech.
+            IDEA-TTS adopts VITS as the TTS backbone.
+            To effectively disentangle the environment, speaker, and text factors, we propose an incremental disentanglement process, where an environment estimator is designed to first decompose the environmental spectrogram into an environment mask and an enhanced spectrogram.
+            The environment mask is then processed by an environment encoder to extract environmental embeddings, while the enhanced spectrogram facilitates the subsequent disentanglement of the speaker and text factors with the condition of the speaker embeddings, which are extracted from the environmental speech using a pretrained environment-robust speaker encoder.
+            Finally, both the speaker and environment embeddings are conditioned into the decoder for environment-aware speech generation.
+            Experimental results demonstrate that IDEA-TTS achieves superior performance in the environment-aware TTS task, excelling in speech quality, speaker similarity, and environmental similarity.
+            Additionally, IDEA-TTS is also capable of acoustic environment conversion and achieves state-of-the-art performance.
           </p>
         </div>
       </div>
@@ -123,8 +123,7 @@
       <td style="text-align: center;"><b>Speaker Reference (clean)</b></th>
       <td style="text-align: center;"><b>YourTTS (Clean Ref.)</b></th>
       <td style="text-align: center;"><b>YourTTS</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS (w/o SE)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS-s</b></th>
+      <td style="text-align: center;"><b>IDEA-TTS (w/o ID)</b></th>
       <td style="text-align: center;"><b>IDEA-TTS</b></th>
     </tr>
 
@@ -135,7 +134,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/C/C_01.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/D/D_01.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/E/E_01.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_01.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_01.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/G/G_01.wav" type="audio/wav"></audio></td>
     </tr>
   
@@ -146,7 +145,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/C/C_12.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/D/D_12.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/E/E_12.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_12.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_12.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/G/G_12.wav" type="audio/wav"></audio></td>
     </tr>
     
@@ -157,7 +156,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/C/C_19.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/D/D_19.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/E/E_19.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_19.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_19.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/G/G_19.wav" type="audio/wav"></audio></td>
     </tr>
 
@@ -168,7 +167,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/C/C_09.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/D/D_09.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/E/E_09.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_09.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/F/F_09.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/G/G_09.wav" type="audio/wav"></audio></td>
     </tr>
   </table>
@@ -187,8 +186,8 @@
       <td style="text-align: center;"><b>Speaker Reference</b></th>
       <td style="text-align: center;"><b>Speaker Reference (clean)</b></th>
       <td style="text-align: center;"><b>Environment Reference</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS (w/o SE)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS-s</b></th>
+      <td style="text-align: center;"><b>IDEA-TTS (w/o ID)</b></th>
+      <!-- <td style="text-align: center;"><b>IDEA-TTS-s</b></th> -->
       <td style="text-align: center;"><b>IDEA-TTS</b></th>
     </tr>
 
@@ -198,7 +197,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_03.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_03.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_03.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_03.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_03.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_03.wav" type="audio/wav"></audio></td>
     </tr>
     <tr>
@@ -207,7 +206,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_04.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_04.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_04.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_04.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_04.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_04.wav" type="audio/wav"></audio></td>
     </tr>
     <tr>
@@ -216,7 +215,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_06.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_06.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_06.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_06.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_06.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_06.wav" type="audio/wav"></audio></td>
     </tr>
     <tr>
@@ -225,7 +224,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_15.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_15.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_15.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_15.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_15.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_15.wav" type="audio/wav"></audio></td>
     </tr>
 
@@ -235,7 +234,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_20.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_20.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_20.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_20.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_20.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_20.wav" type="audio/wav"></audio></td>
     </tr>
 
@@ -245,7 +244,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_17.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_17.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_17.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_17.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_17.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_17.wav" type="audio/wav"></audio></td>
     </tr>
 
@@ -255,7 +254,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_02.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_02.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_02.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_02.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_02.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_02.wav" type="audio/wav"></audio></td>
     </tr>
 
@@ -265,7 +264,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/B/B_16.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/H/H_16.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/I/I_16.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_16.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/J/J_16.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/TTS/K/K_16.wav" type="audio/wav"></audio></td>
     </tr>
   </table>
@@ -295,8 +294,8 @@
       <td style="text-align: center;"><b>Source</b></th>
       <td style="text-align: center;"><b>Reference</b></th>
       <td style="text-align: center;"><b>DiffRENT (W-R2-C)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS (w/o SE)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS-s</b></th>
+      <td style="text-align: center;"><b>IDEA-TTS (w/o ID)</b></th>
+      <!-- <td style="text-align: center;"><b>IDEA-TTS-s</b></th> -->
       <td style="text-align: center;"><b>IDEA-TTS</b></th>
       <td style="text-align: center;"><b>Target</b></th>
     </tr>
@@ -306,7 +305,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/f10_script1_clean_02_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -315,7 +314,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/m10_script2_clean_08_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -324,7 +323,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p234_229_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -333,7 +332,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Clean/p241_293_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -353,8 +352,8 @@
       <td style="text-align: center;"><b>Source</b></th>
       <td style="text-align: center;"><b>Reference</b></th>
       <td style="text-align: center;"><b>DiffRENT (W-R2-C)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS (w/o SE)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS-s</b></th>
+      <td style="text-align: center;"><b>IDEA-TTS (w/o ID)</b></th>
+      <!-- <td style="text-align: center;"><b>IDEA-TTS-s</b></th> -->
       <td style="text-align: center;"><b>IDEA-TTS</b></th>
       <td style="text-align: center;"><b>Target</b></th>
     </tr>
@@ -364,7 +363,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/f10_script1_clean_28_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -373,7 +372,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/m10_script5_clean_01_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -382,7 +381,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p234_222_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -391,7 +390,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Clean2Env/p241_154_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -411,8 +410,8 @@
       <td style="text-align: center;"><b>Source</b></th>
       <td style="text-align: center;"><b>Reference</b></th>
       <td style="text-align: center;"><b>DiffRENT (W-R2-C)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS (w/o SE)</b></th>
-      <td style="text-align: center;"><b>IDEA-TTS-s</b></th>
+      <td style="text-align: center;"><b>IDEA-TTS (w/o ID)</b></th>
+      <!-- <td style="text-align: center;"><b>IDEA-TTS-s</b></th> -->
       <td style="text-align: center;"><b>IDEA-TTS</b></th>
       <td style="text-align: center;"><b>Target</b></th>
     </tr>
@@ -421,7 +420,7 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/f10_script2_clean_44_tgt.wav" type="audio/wav"></audio></td>
     </tr>
@@ -430,25 +429,25 @@
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/m10_script2_clean_02_tgt.wav" type="audio/wav"></audio></td>
     </tr>
     <tr>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_src.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_ref.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_diffrent.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_ideatts-s.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_ideatts.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_022_tgt.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_src.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_ref.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_diffrent.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_ideatts_wo_se.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_ideatts-s.wav" type="audio/wav"></audio></td> -->
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_ideatts.wav" type="audio/wav"></audio></td>
+      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p234_112_tgt.wav" type="audio/wav"></audio></td>
     </tr>
     <tr>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_src.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_ref.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_diffrent.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_ideatts_wo_se.wav" type="audio/wav"></audio></td>
-      <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_ideatts-s.wav" type="audio/wav"></audio></td>
+      <!-- <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_ideatts-s.wav" type="audio/wav"></audio></td> -->
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_ideatts.wav" type="audio/wav"></audio></td>
       <td><audio controls="" style='display: inline-block; width: 200px; height: 50px;'><source src="samples/AEC/Env2Env/p241_124_tgt.wav" type="audio/wav"></audio></td>
     </tr>
